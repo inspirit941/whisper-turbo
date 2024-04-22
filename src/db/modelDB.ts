@@ -36,7 +36,7 @@ interface ModelDBSchema extends DBSchema {
  * ```
  */
 export default class ModelDB {
-    private readonly remoteUrl = "https://rmbl.us";
+    private readonly remoteUrl = "https://huggingface.co";
     private db: IDBPDatabase<ModelDBSchema> | null;
 
     private constructor(db: IDBPDatabase<ModelDBSchema>) {
@@ -159,7 +159,7 @@ export default class ModelDB {
         model: AvailableModels,
         onProgress: (progress: number) => void
     ): Promise<Result<void, Error>> {
-        const remoteURL = `${this.remoteUrl}/whisper-turbo/${model}-q8g16.bin`;
+        const remoteURL = `${this.remoteUrl}/${model}/resolve/main/model.safetensor`; // Adjusted to point to 'model.safetensor'
         const fetchResult = await this.fetchBytes(remoteURL, onProgress);
 
         if (fetchResult.isErr) {
@@ -171,7 +171,7 @@ export default class ModelDB {
         this.db!.put("availableModels", modelID, model);
         const dbModel = { name: model, ID: modelID, bytes: data };
         this.db!.put("models", dbModel, modelID);
-        this.getTokenizer(modelID);
+        this.getTokenizer(modelID); // Assuming you still need to fetch the tokenizer separately
 
         return Result.ok(undefined);
     }

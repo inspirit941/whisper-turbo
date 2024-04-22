@@ -3,19 +3,15 @@ import ModelDB from "./db/modelDB";
 import { DBModel } from "./db/types";
 
 export enum AvailableModels {
-    WHISPER_TINY = "tiny",
-    WHISPER_BASE = "base",
-    WHISPER_SMALL = "small",
-    WHISPER_MEDIUM = "medium",
-    WHISPER_LARGE = "large",
+    MODEL_2312 = "GuideU/whisper_wak",
+    MODEL_2404 = "GuideU/whisper-mobi-240418",
+    TEST = "medium",
 }
 
 export const ModelSizes: Map<AvailableModels, number> = new Map([
-    [AvailableModels.WHISPER_TINY, 51444634],
-    [AvailableModels.WHISPER_BASE, 96834130],
-    [AvailableModels.WHISPER_SMALL, 313018088],
-    [AvailableModels.WHISPER_MEDIUM, 972263884],
-    [AvailableModels.WHISPER_LARGE, 1954315876],
+    [AvailableModels.MODEL_2312, 972263884],
+    [AvailableModels.MODEL_2404, 972263884],
+    [AvailableModels.TEST, 972263884],
 ]);
 
 export class Model {
