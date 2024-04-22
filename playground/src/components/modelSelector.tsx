@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AvailableModels, ModelSizes } from "whisper-turbo";
+import { AvailableModels, ModelSizes } from "../../../dist";
 import { humanFileSize } from "../util";
 
 interface ModelSelectorProps {
@@ -15,9 +15,12 @@ const ModelSelector = (props: ModelSelectorProps) => {
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
     const displayModels = () => {
+        console.log(AvailableModels)
         const models = Object.values(AvailableModels).slice(0, -1);
+        console.log(models)
         const sizes = Array.from(ModelSizes.values()).slice(0, -1);
         const zipped = models.map((model, i) => [model, sizes[i]]);
+
         return zipped.map((model, idx) => (
             <li key={model[0] as string}>
                 <a

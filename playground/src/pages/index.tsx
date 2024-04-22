@@ -3,7 +3,7 @@ import { VT323 } from "@next/font/google";
 import { useState } from "react";
 import Layout from "../components/layout";
 import WebGPUModal from "../components/modal";
-import { Segment } from "whisper-turbo";
+import { Segment } from "../../../dist";
 import ControlPanel, { Transcript } from "../components/controlPanel";
 
 const vt = VT323({ weight: "400", display: "swap" });

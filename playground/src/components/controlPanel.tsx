@@ -7,7 +7,7 @@ import {
     DecodingOptionsBuilder,
     initialize,
     Task
-} from "whisper-turbo";
+} from "../../../dist";
 import toast from "react-hot-toast";
 import { humanFileSize } from "../util";
 import ProgressBar from "./progressBar";

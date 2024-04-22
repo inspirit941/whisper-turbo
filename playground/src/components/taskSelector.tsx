@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ConfigOptions } from "./configModal";
-import { Task } from "whisper-turbo";
+import { Task } from "../../../dist";
 
 interface TaskComponentProps {
     configOptions: ConfigOptions;

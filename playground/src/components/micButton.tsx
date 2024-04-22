@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MicRecorder } from "whisper-turbo";
+import { MicRecorder } from "../../../dist";
 
 const SAMPLE_RATE = 16000;
 
